@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Datos Empleado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script type="text/javaScript">
+        function ValidaForm(){
+            var dieta=document.getElementById("dietatxt").value
+            var recomendaciones=document.getElementById("recomendacionestxt").value
+
+            if(dieta==="" || recomendaciones === ""){
+                alert("llene todos los campos.");
+                return false;
+            }
+            return true;
+            }
+
+        function ValidaLet(){
+            if (event.keyCode>=97 && event.keyCode<=122){
+                event.returnValue=true;
+            }else if(event.keyCode>=65 && event.keyCode<=90){
+                event.returnValue=true;
+            }else if(event.keyCode==32){
+
+            }else
+                event.returnValue=false;
+            }
+    </script> 
+</head>
+<body>
+<h2>Formulario para Guardar Datos de Empleado</h2>
+    <form action="Datos_Empleado.php" method="post" onsubmit="return ValidaForm();">
+        <input type="text" onkeypress="ValidaLet()" id="dietatxt" name="txt_dieta" placeholder="Dieta"><br><br>
+        
+        <input type="text" onkeypress="ValidaLet()" id="recomendacionestxt" name="txt_recomendaciones" placeholder="Recomendaciones"><br><br>
+
+        <input type="submit" value="Enviar">
+</body>
+</html>

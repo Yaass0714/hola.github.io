@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Cajero</title>
+        </head>
+        <body>
+            <h2>Cajero</h2>
+            <input type="number" id="cantidad">
+            <br>
+            <button onclick="retirar()">Calcular</button>
+            <br>
+            <input type="text" id="txt_r">
+            <script>
+                function retirar(){
+                    const cantidad=Integer.parseInt(document.getElementById("Cantidad a retirar:"));
+                    let c1,c2,c3,c4,r1,r2,r3;
+                    c1=cantidad/500;
+                    r1=cantidad%500;
+                    c2=r1/200;
+                    r2=r1%200;
+                    c3=r2/100;
+                    r3=r2%100;
+                    c4=r3/50;
+                    document.getElementById("txt_r").value="BQ="+c1+"BD="+c2+"BC="+c3+"BCINC="+c4;
+                }
+                </script>
+                </body>
+                </html>

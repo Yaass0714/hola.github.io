@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>IMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script type="text/javaScript">
+        function ValidaForm(){
+            var Peso=document.getElementById("Pesotxt").value
+            var Altura=document.getElementById("Alturatxt").value
+            var Calcular=document.getElementById("Calculartxt").value
+
+            if(Peso==="" || Altura === "" || Calcular === ""){
+                alert("llene todos los campos.");
+                return false;
+            }
+            return true;
+            }
+
+        function ValidaLet(){
+            if (event.keyCode>=97 && event.keyCode<=122){
+                event.returnValue=true;
+            }else if(event.keyCode>=65 && event.keyCode<=90){
+                event.returnValue=true;
+            }else if(event.keyCode==32){
+
+            }else
+                event.returnValue=false;
+            }
+            
+        function ValidaNum(){
+            if (event.keyCode>=1 && event.keyCode<=31){
+                event.returnValue=true;
+            }else if(event.keyCode>=32 && event.keyCode<=63){
+                event.returnValue=true;
+            }else
+                event.returnValue=false;
+            }
+    </script> 
+</head>
+<body>
+<h2> IMC </h2>
+    <form action="Datos_imc.php" method="post" onsubmit="return ValidaForm();">
+        <input type="text" onkeypress="ValidaNum()" id="Pesotxt" name="txt_Peso" placeholder="Peso"><br><br>
+        
+        <input type="text" onkeypress="ValidaNum()" id="Alturatxt" name="txt_Altura" placeholder="Altura"><br><br>
+
+        <input type="text" onkeypress="ValidaNum()" id="Calculartxt" name="txt_Calcular" placeholder="Calcular IMC"><br><br>
+
+        <input type="submit" value="Enviar">
+</body>
+</html>
